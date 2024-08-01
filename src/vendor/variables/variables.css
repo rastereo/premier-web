@@ -1,0 +1,13 @@
+:root {
+  --white: #ffffff;
+  --white-two: #ececec;
+  --black: #000000;
+  --black-two: #1a1a1a;
+  --black-three: #141414;
+  --yellow: #fddd2d;
+
+  --font-family: "Rubik", Arial, sans-serif;
+  --second-family: "Rubik Mono One", Arial, monospace;
+
+  --transition: opacity 0.7s linear;
+}

@@ -1,0 +1,128 @@
+/** Fonts **/
+@import url(./src/vendor/fonts/fonts.css);
+
+/** Normalize **/
+@import url(./src/vendor/normalize.css);
+
+/** Variables **/
+@import url(./src/vendor/variables/variables.css);
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  font-family: var(--font-family);
+
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.hover:hover {
+  opacity: 0.6;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  position: absolute;
+}
+
+.header__logo {
+  display: block;
+  width: 213.59px;
+  height: 27px;
+  transition: var(--transition);
+}
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url(./src/images/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+}
+
+.presentation__title {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 64px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--yellow);
+  word-spacing: -30px;
+  position: absolute;
+  top: 42%;
+  margin: 0;
+}
+
+.presentation__play {
+  width: 49px;
+  height: 55.5px;
+  transform: translateY(7px);
+}
+
+.subscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscription_position_absolute {
+  position: absolute;
+  top: 78%;
+}
+
+.subscription__button {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  border: 0;
+  background-color: var(--yellow);
+  padding: 21px 40px 21px;
+  border-radius: 23px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 16px;
+}
+
+.subscription__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0.75;
+  color: var(--yellow);
+  margin: 0;
+}
+
+.presentation__arrow {
+  position: absolute;
+  bottom: 28px;
+  transition: var(--transition);
+}
+
+@media screen and (min-width: 1470px) and (min-height: 980px) {
+  .presentation__title {
+    top: 48%;
+  }
+}
