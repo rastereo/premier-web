@@ -7,10 +7,6 @@
 /** Variables **/
 @import url(./src/vendor/variables/variables.css);
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +23,8 @@ body {
 
   background-color: var(--yellow);
   color: var(--black);
+
+  position: relative;
 }
 
 ul {
@@ -37,6 +35,15 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--black);
+}
+
+.hover {
+  transition: var(--transition);
+}
+
+.hover:hover {
+  opacity: 0.6;
 }
 
 .main {
@@ -47,10 +54,6 @@ a {
 
 .section {
   scroll-snap-align: start;
-}
-
-.hover:hover {
-  opacity: 0.6;
 }
 
 .play {
@@ -71,7 +74,6 @@ a {
   display: block;
   width: 213.59px;
   height: 27px;
-  transition: var(--transition);
 }
 
 .header__path {
@@ -108,7 +110,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: 2px solid red;
+}
+
+.subscription_position_grid {
+  align-self: flex-start;
 }
 
 .subscription__button {
@@ -120,8 +125,12 @@ a {
   padding: 21px 40px 21px;
   border-radius: 23px;
   cursor: pointer;
-  transition: var(--transition);
   margin-bottom: 16px;
+}
+
+.subscription__button_color_black {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .subscription__description {
@@ -130,6 +139,10 @@ a {
   line-height: 0.75;
   color: var(--yellow);
   margin: 0;
+}
+
+.subscription__description_color_black {
+  color: var(--black);
 }
 
 .presentation__arrow {
@@ -141,7 +154,6 @@ a {
   background-size: contain;
   width: 25px;
   height: 25px;
-  transition: var(--transition);
   justify-content: end;
   cursor: pointer;
   padding-top: 9%;
@@ -149,8 +161,9 @@ a {
 
 .film-collection {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr auto 1fr auto;
   align-items: center;
 }
 
@@ -163,7 +176,6 @@ a {
   text-align: center;
   word-spacing: -30px;
   margin: 0;
-  padding: 10% 0 0 0;
 }
 
 /* .film-collection__scroll-container {
@@ -225,6 +237,7 @@ a {
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding-bottom: 15px;
 }
 
 .film-collection__film-list::-webkit-scrollbar {
@@ -294,4 +307,19 @@ a {
 
 .film-collection__film-list li:nth-child(14) .film-collection__link {
   background-image: url(./src/images/film-07.jpg);
+}
+
+.film-collection__info {
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 0.75;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 30px 30px;
+}
+
+.film-collection__email {
+  text-decoration: underline;
 }

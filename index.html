@@ -70,35 +70,37 @@
         <button type="button" class="presentation__arrow hover"></button>
       </section>
       <section class="film-collection section">
-        <h2 class="film-collection__title">
-          Нажав на
-          <img src="./src/images/play-black.svg" alt="Play icon" class="play" />
-          вы можете
-        </h2>
-        <ul class="film-collection__list">
-          <li class="spacer"></li>
-          <li class="film-collection__word">растрогаться</li>
-          <li class="film-collection__word film-collection__word_active">попасть в сказку</li>
-          <li class="film-collection__word">пощекотать нервы</li>
-          <li class="film-collection__word">растрогаться</li>
-          <li class="film-collection__word">попасть в сказку</li>
-          <li class="film-collection__word">пощекотать нервы</li>
-          <li class="spacer"></li>
-        </ul>
-        <ul class="film-collection__list">
-          <li class="spacer"></li>
-          <li class="film-collection__word">одному</li>
-          <li class="film-collection__word">с друзьями</li>
-          <li class="film-collection__word">с семьей</li>
-          <li class="film-collection__word">вдвоем</li>
-          <li class="film-collection__word">уединившись</li>
-          <li class="film-collection__word film-collection__word_active">с друзьями</li>
-          <li class="film-collection__word">с семьей</li>
-          <li class="film-collection__word">вдвоем</li>
-          <li class="film-collection__word">уединившись</li>
-          <li class="film-collection__word">с друзьями</li>
-          <li class="spacer"></li>
-        </ul>
+        <div class="film-collection__container">
+          <h2 class="film-collection__title">
+            Нажав на
+            <img src="./src/images/play-black.svg" alt="Play icon" class="play" />
+            вы можете
+          </h2>
+          <ul class="film-collection__list">
+            <li class="spacer"></li>
+            <li class="film-collection__word">растрогаться</li>
+            <li class="film-collection__word film-collection__word_active">попасть в сказку</li>
+            <li class="film-collection__word">пощекотать нервы</li>
+            <li class="film-collection__word">растрогаться</li>
+            <li class="film-collection__word">попасть в сказку</li>
+            <li class="film-collection__word">пощекотать нервы</li>
+            <li class="spacer"></li>
+          </ul>
+          <ul class="film-collection__list">
+            <li class="spacer"></li>
+            <li class="film-collection__word">одному</li>
+            <li class="film-collection__word">с друзьями</li>
+            <li class="film-collection__word">с семьей</li>
+            <li class="film-collection__word">вдвоем</li>
+            <li class="film-collection__word">уединившись</li>
+            <li class="film-collection__word film-collection__word_active">с друзьями</li>
+            <li class="film-collection__word">с семьей</li>
+            <li class="film-collection__word">вдвоем</li>
+            <li class="film-collection__word">уединившись</li>
+            <li class="film-collection__word">с друзьями</li>
+            <li class="spacer"></li>
+          </ul>
+        </div>
         <ul class="film-collection__film-list">
           <li>
             <a href="https://premier.one/show/krasnyj-5" class="film-collection__link"></a>
@@ -143,9 +145,16 @@
             <a href="https://premier.one/show/sny-alisy" class="film-collection__link"></a>
           </li>
         </ul>
-        <div class="subscription">
-          <button type="button" class="subscription__button hover">Подключить 45 дней за 1 &#8381;</button>
-          <p class="subscription__description">Далее — 299 рублей в месяц</p>
+        <div class="subscription subscription_position_grid">
+          <button type="button" class="subscription__button subscription__button_color_black hover">Подключить 45 дней за 1 &#8381;</button>
+          <p class="subscription__description subscription__description_color_black">Далее — 299 рублей в месяц</p>
+        </div>
+        <div class="film-collection__info">
+          <p>Copyright 2024 &copy;PREMIER. Все права защищены</p>
+          <p>
+            Получить эту подборку на
+            <a href="#" class="film-collection__email hover">почту</a>
+          </p>
         </div>
       </section>
     </main>

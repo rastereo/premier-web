@@ -12,9 +12,9 @@ const filmLinks = filmList.querySelectorAll(".film-collection__link");
 
 const windowHeight = window.innerHeight;
 
-let isDown = false;
 let startX;
 let scrollLeft;
+let isDown = false;
 let isDragging = false;
 
 arrowButton.addEventListener("click", () => {
@@ -66,6 +66,7 @@ filmList.addEventListener("mousedown", (e) => {
 
 filmList.addEventListener("mouseleave", () => {
   isDown = false;
+  isDragging = true;
   filmList.style.cursor = "grab";
 });
 
@@ -80,17 +81,15 @@ filmList.addEventListener("mouseup", () => {
 filmList.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
+  isDragging = true;
   const x = e.pageX - filmList.offsetLeft;
   const walkX = (x - startX) * 1;
   filmList.scrollLeft = scrollLeft - walkX;
-  isDragging = true;
 });
 
 filmLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    if (isDragging) {
-      e.preventDefault();
-    }
+    if (isDragging) e.preventDefault();
   });
 
   link.addEventListener("mousedown", (e) => {
