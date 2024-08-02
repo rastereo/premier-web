@@ -35,6 +35,10 @@ ul {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .main {
   height: 100vh;
   overflow-y: scroll;
@@ -104,6 +108,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  outline: 2px solid red;
 }
 
 .subscription__button {
@@ -161,13 +166,12 @@ ul {
   padding: 10% 0 0 0;
 }
 
-.film-collection__scroll-container {
-  width: 00%;
+/* .film-collection__scroll-container {
   overflow-x: auto;
   display: flex;
   justify-content: flex-start;
   padding: 20px 0;
-}
+} */
 
 .film-collection__list {
   width: 100%;
@@ -210,4 +214,84 @@ ul {
   width: 50vw;
   flex-shrink: 0;
   cursor: default;
+}
+
+.film-collection__film-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.film-collection__film-list::-webkit-scrollbar {
+  display: none;
+}
+
+.film-collection__link {
+  display: block;
+  width: 347px;
+  height: 195px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.film-collection__film-list li:nth-child(1) .film-collection__link {
+  background-image: url(./src/images/film-01.jpg);
+}
+
+.film-collection__film-list li:nth-child(2) .film-collection__link {
+  background-image: url(./src/images/film-02.jpg);
+}
+
+.film-collection__film-list li:nth-child(3) .film-collection__link {
+  background-image: url(./src/images/film-03.jpg);
+}
+
+.film-collection__film-list li:nth-child(4) .film-collection__link {
+  background-image: url(./src/images/film-04.jpg);
+}
+
+.film-collection__film-list li:nth-child(5) .film-collection__link {
+  background-image: url(./src/images/film-05.jpg);
+}
+
+.film-collection__film-list li:nth-child(6) .film-collection__link {
+  background-image: url(./src/images/film-06.jpg);
+}
+
+.film-collection__film-list li:nth-child(7) .film-collection__link {
+  background-image: url(./src/images/film-07.jpg);
+}
+
+.film-collection__film-list li:nth-child(8) .film-collection__link {
+  background-image: url(./src/images/film-01.jpg);
+}
+
+.film-collection__film-list li:nth-child(9) .film-collection__link {
+  background-image: url(./src/images/film-02.jpg);
+}
+
+.film-collection__film-list li:nth-child(10) .film-collection__link {
+  background-image: url(./src/images/film-03.jpg);
+}
+
+.film-collection__film-list li:nth-child(11) .film-collection__link {
+  background-image: url(./src/images/film-04.jpg);
+}
+
+.film-collection__film-list li:nth-child(12) .film-collection__link {
+  background-image: url(./src/images/film-05.jpg);
+}
+
+.film-collection__film-list li:nth-child(13) .film-collection__link {
+  background-image: url(./src/images/film-06.jpg);
+}
+
+.film-collection__film-list li:nth-child(14) .film-collection__link {
+  background-image: url(./src/images/film-07.jpg);
 }

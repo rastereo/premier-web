@@ -7,8 +7,15 @@ const arrowButton = presentationSection.querySelector(".presentation__arrow");
 const filmCollectionSection = main.querySelector(".film-collection");
 const wordList = filmCollectionSection.querySelectorAll(".film-collection__list li");
 // const activeWords = filmCollectionSection.querySelectorAll(".film-collection__word_active");
+const filmList = filmCollectionSection.querySelector(".film-collection__film-list");
+const filmLinks = filmList.querySelectorAll(".film-collection__link");
 
 const windowHeight = window.innerHeight;
+
+let isDown = false;
+let startX;
+let scrollLeft;
+let isDragging = false;
 
 arrowButton.addEventListener("click", () => {
   filmCollectionSection.scrollIntoView({ behavior: "smooth" });
@@ -45,4 +52,48 @@ wordList.forEach((item) => {
       });
     });
   }
+});
+
+filmList.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+
+  isDown = true;
+  isDragging = false;
+  startX = e.pageX - filmList.offsetLeft;
+  scrollLeft = filmList.scrollLeft;
+  filmList.style.cursor = "grabbing";
+});
+
+filmList.addEventListener("mouseleave", () => {
+  isDown = false;
+  filmList.style.cursor = "grab";
+});
+
+filmList.addEventListener("mouseup", () => {
+  isDown = false;
+  filmList.style.cursor = "grab";
+  if (!isDragging) {
+    filmList.style.pointerEvents = "auto";
+  }
+});
+
+filmList.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - filmList.offsetLeft;
+  const walkX = (x - startX) * 1;
+  filmList.scrollLeft = scrollLeft - walkX;
+  isDragging = true;
+});
+
+filmLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    if (isDragging) {
+      e.preventDefault();
+    }
+  });
+
+  link.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+  });
 });
