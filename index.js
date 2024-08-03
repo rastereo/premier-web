@@ -1,3 +1,6 @@
+import PopupWithForm from "./src/components/PopupWithForm.js";
+import PopupWithSuccess from "./src/components/PopupWithSuccess.js";
+
 const main = document.querySelector(".main");
 const logo = document.querySelector(".header__logo");
 const logoPaths = logo.querySelectorAll("path");
@@ -6,9 +9,9 @@ const presentationSection = main.querySelector(".presentation");
 const arrowButton = presentationSection.querySelector(".presentation__arrow");
 const filmCollectionSection = main.querySelector(".film-collection");
 const wordList = filmCollectionSection.querySelectorAll(".film-collection__list li");
-// const activeWords = filmCollectionSection.querySelectorAll(".film-collection__word_active");
 const filmList = filmCollectionSection.querySelector(".film-collection__film-list");
 const filmLinks = filmList.querySelectorAll(".film-collection__link");
+const emailButton = main.querySelector(".film-collection__email");
 
 const windowHeight = window.innerHeight;
 
@@ -16,6 +19,34 @@ let startX;
 let scrollLeft;
 let isDown = false;
 let isDragging = false;
+
+const popupSubscription = new PopupWithForm(
+  {
+    handleFormSubmit: ({ email }) => {
+      popupSubscription.renderLoading(true);
+
+      console.log(email);
+
+      setTimeout(() => {
+        popupSubscription.renderLoading(false);
+        popupSubscription.close();
+        popupSuccess.open();
+      }, 1000);
+    },
+  },
+  ".popup_name_subscription"
+);
+
+const popupSuccess = new PopupWithSuccess(".popup_name_success");
+
+console.log(popupSuccess);
+
+popupSubscription.setEventListeners();
+popupSuccess.setEventListeners();
+
+emailButton.addEventListener("click", () => {
+  popupSubscription.open();
+});
 
 arrowButton.addEventListener("click", () => {
   filmCollectionSection.scrollIntoView({ behavior: "smooth" });

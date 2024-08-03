@@ -89,15 +89,10 @@
           <ul class="film-collection__list">
             <li class="spacer"></li>
             <li class="film-collection__word">одному</li>
-            <li class="film-collection__word">с друзьями</li>
-            <li class="film-collection__word">с семьей</li>
-            <li class="film-collection__word">вдвоем</li>
-            <li class="film-collection__word">уединившись</li>
             <li class="film-collection__word film-collection__word_active">с друзьями</li>
             <li class="film-collection__word">с семьей</li>
             <li class="film-collection__word">вдвоем</li>
             <li class="film-collection__word">уединившись</li>
-            <li class="film-collection__word">с друзьями</li>
             <li class="spacer"></li>
           </ul>
         </div>
@@ -150,14 +145,49 @@
           <p class="subscription__description subscription__description_color_black">Далее — 299 рублей в месяц</p>
         </div>
         <div class="film-collection__info">
-          <p>Copyright 2024 &copy;PREMIER. Все права защищены</p>
+          <p class="film-collection__copyright">Copyright 2024 &copy;PREMIER. Все права защищены</p>
           <p>
             Получить эту подборку на
-            <a href="#" class="film-collection__email hover">почту</a>
+            <button type="button" class="film-collection__email hover">почту</button>
           </p>
         </div>
       </section>
     </main>
-    <script src="index.js"></script>
+    <div class="popup popup_name_subscription">
+      <div class="popup__container">
+        <img src="./src/images/logo.svg" alt="Premier logo" class="popup__logo" />
+        <h3 class="popup__title">Укажите почту</h3>
+        <p class="popup__description">на которую мы пришлём эту подборку</p>
+        <form action="#" name="description" class="popup__form">
+          <input
+            type="email"
+            name="email"
+            placeholder="Введите почту"
+            class="popup__input popup__input_name_email"
+            minlength="5"
+            required
+          />
+          <button type="submit" class="popup__save-button hover" disabled>
+            <span class="popup__continue">Продолжить</span>
+            <span class="loader hide"></span>
+          </button>
+        </form>
+        <p class="popup__agreement">
+          Нажимая «Продолжить», я принимаю условия
+          <a href="https://premier.one/info/tntp/agreement" target="_blank" class="popup__link hover">Пользовательского соглашения</a> ООО
+          «ПРЕМЬЕР»
+        </p>
+        <button type="button" class="popup__close-button hover"></button>
+      </div>
+    </div>
+    <div class="popup popup_name_success">
+      <div class="popup__container popup__container_name_success">
+        <img src="./src/images/success.svg" alt="Premier logo" class="popup__logo popup__logo_name_success" />
+        <h3 class="popup__title popup__title_name_success">Письмо отправлено!</h3>
+        <button type="button" class="popup__success-button hover">Хорошо</button>
+        <button type="button" class="popup__close-button popup__close-button_name_success hover"></button>
+      </div>
+    </div>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

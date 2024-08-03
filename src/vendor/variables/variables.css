@@ -4,10 +4,18 @@
   --black: #000000;
   --black-two: #1a1a1a;
   --black-three: #141414;
+  --grey: #8a8a8a;
+  --grey-two: #8c8c8c;
   --yellow: #fddd2d;
+  --yellow-two: #ba9b00;
+
+  --input-background: #292929;
+
+  --spinner-color: #f9f9f9;
 
   --font-family: "Rubik", Arial, sans-serif;
-  --second-family: "Rubik Mono One", Arial, monospace;
+  --second-family: "Rubik Mono One", monospace;
 
   --transition: opacity 0.7s linear;
+  --popup-transition: all 0.3s linear;
 }
