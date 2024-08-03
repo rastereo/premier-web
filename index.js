@@ -11,7 +11,7 @@ const filmCollectionSection = main.querySelector(".film-collection");
 const wordList = filmCollectionSection.querySelectorAll(".film-collection__list li");
 const filmList = filmCollectionSection.querySelector(".film-collection__film-list");
 const filmLinks = filmList.querySelectorAll(".film-collection__link");
-const emailButton = main.querySelector(".film-collection__email");
+const emailButtonList = main.querySelectorAll(".film-collection__email");
 
 const windowHeight = window.innerHeight;
 
@@ -39,13 +39,13 @@ const popupSubscription = new PopupWithForm(
 
 const popupSuccess = new PopupWithSuccess(".popup_name_success");
 
-console.log(popupSuccess);
-
 popupSubscription.setEventListeners();
 popupSuccess.setEventListeners();
 
-emailButton.addEventListener("click", () => {
-  popupSubscription.open();
+emailButtonList.forEach((emailButton) => {
+  emailButton.addEventListener("click", () => {
+    popupSubscription.open();
+  });
 });
 
 arrowButton.addEventListener("click", () => {
@@ -59,9 +59,9 @@ main.addEventListener("scroll", () => {
     logoPaths.forEach((path) => {
       path.setAttribute("fill", "#000000");
     });
-  } else if (path.getAttribute("fill") !== "#FDDD2D") {
+  } else if (path.getAttribute("fill") !== "#fddd2d") {
     logoPaths.forEach((path) => {
-      path.setAttribute("fill", "#FDDD2D");
+      path.setAttribute("fill", "#fddd2d");
     });
   }
 });
