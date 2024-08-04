@@ -5,6 +5,12 @@ export default class PopupWithSuccess extends Popup {
     super(popupSelector);
   }
 
+  _handleEscClose(evt) {
+    super._handleEscClose(evt);
+
+    if (evt.key === "Enter") this.close();
+  }
+
   setEventListeners() {
     super.setEventListeners();
 
